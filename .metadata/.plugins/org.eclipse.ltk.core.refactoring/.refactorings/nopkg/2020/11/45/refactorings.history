@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;train&apos; to &apos;Train&apos;&#x0A;- Original project: &apos;nopkg&apos;&#x0A;- Original element: &apos;train&apos;&#x0A;- Renamed element: &apos;Train&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;train&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{train.java[train" matchStrategy="1" name="Train" qualified="false" references="true" similarDeclarations="false" stamp="1604194011217" textual="false" version="1.0"/>
+</session>

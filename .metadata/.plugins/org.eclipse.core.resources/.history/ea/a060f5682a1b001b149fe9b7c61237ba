@@ -1,0 +1,34 @@
+package trainpkg;
+
+public class Route {
+	private int start;
+	private int end;
+	private String dir;
+	
+	
+	public Route(int start, int end, String dir) {
+		this.setStart(start);
+		this.setEnd(end);
+		this.setDir(dir);
+	}
+	public int getStart() {
+		return start;
+	}
+	public int getEnd() {
+		return end;
+	}
+	public String getDir() {
+		return dir;
+	}
+	
+	public void setStart(int start) {
+		this.start = start;
+	}
+	public void setEnd(int end) {
+		this.end = end;
+	}
+	public void setDir(String dir) {
+		this.dir = dir;
+	}
+
+}

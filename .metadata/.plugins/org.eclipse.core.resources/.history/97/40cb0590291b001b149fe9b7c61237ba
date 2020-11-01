@@ -1,0 +1,9 @@
+package metro;
+
+public class train {
+	private int lint = 0;
+	private int cur_line = 0;
+	private int rem_time = 0;
+	private List<Integer>
+
+}

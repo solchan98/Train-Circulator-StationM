@@ -1,0 +1,27 @@
+
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class driver {
+
+	public static void main(String[] args) {
+		Train line1Up = new TrainCycle(1, "상행");
+		Train line1Down = new TrainCycle(1, "하행");
+		Train line2Up = new TrainAcyclic(2, "상행");
+		Train line2Down = new TrainAcyclic(2, "상행");
+		
+		
+		Timer timer = new Timer();//타이머 변수. 
+		TimerTask task = new TimerTask() {//주기 반복 실행.
+
+			@Override
+			public void run() {
+				for(int i = 0; i < train.length; i++)
+					train[i].run();
+				System.out.println("---------------------------------------");
+			}	
+		};
+		timer.schedule(task, 0, 3000);
+	}
+}

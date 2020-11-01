@@ -1,0 +1,28 @@
+package metro;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import trainpkg.TrainAcyclic;
+import trainpkg.TrainCycle;
+import trainpkg.train;
+
+public class driver {
+
+	public static void main(String[] args) {
+		train test = new TrainCycle(1, "행");
+		train test2 = new TrainAcyclic(2, "하행");
+		
+		Timer timer = new Timer();//타이머 변수. 
+		TimerTask task = new TimerTask() {//주기 반복 실행.
+
+			@Override
+			public void run() {
+				test.run();
+				test2.run();
+				System.out.println("---------------------------------------");
+			}	
+		};
+		timer.schedule(task, 0, 3000);
+	}
+}
