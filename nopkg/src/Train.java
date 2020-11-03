@@ -3,6 +3,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,30 @@ public abstract class Train {
 	
 	public Train(int line, String dir) {
 		this.setLine(line);
+		
+	}
+	//DB 갱신 메서드.
+	public void setData(Statement stmt) {
+		String db_cur_station = null;
+		String db_rem_time = null;
+		if(this.dir.equals("상행")) {
+			db_cur_station = "UPDATE MJ.metro SET cur_station =' " + this.getSname(cur_station) +
+					"' WHERE line = '"+ line +"Up'";
+			db_rem_time = "UPDATE MJ.metro SET rem_next_time =' " + this.rem_next_time +
+					"' WHERE line = '"+ line +"Up'";
+		}
+		else {
+			db_cur_station = "UPDATE MJ.metro SET cur_station =' " + this.getSname(cur_station) +
+					"' WHERE line = '"+ line + "Down'";
+			db_rem_time = "UPDATE MJ.metro SET rem_next_time =' " + this.rem_next_time +
+					"' WHERE line = '"+ line +"Down'";
+		}
+		try {
+			stmt.executeUpdate(db_cur_station);
+			stmt.executeUpdate(db_rem_time);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	public void setCurStation(String dir) {
 		if(dir.equals("상행")) {
@@ -82,14 +108,9 @@ public abstract class Train {
 	}
 	
 	//열차 운행 메서드.
-	public void run() {
-		if(this.getRemTime() <= 0){
-			System.out.println("도착");
-		}
-		else {
-			System.out.println(this.getLine()+ "호선 " + this.dir + " 현재 역 : " + this.getSname(getCurStation()) + "역");
-			System.out.println("다음역까지 남은 시간 : " + this.getRemTime() + "초" + "\n");
-		}		
+	public void run(Statement stmt) {
 		this.setRemNextTime();
+		this.setData(stmt);
+		
 	}
 }

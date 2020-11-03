@@ -7,7 +7,7 @@ public class DBManager {
 		
 	}
 	public Connection makeDB() {
-		String url = "jdbc:mysql://www.travelit.me:3306";
+		String url = "jdbc:mysql://www.travelit.me:3306";					
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

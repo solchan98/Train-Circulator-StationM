@@ -14,31 +14,24 @@ public class driver {
 		driver metro = new driver();
 		DBManager db = new DBManager();
 		Connection con = db.makeDB();
-		Statement stmt = con.createStatement();
-		String sql = "UPDATE MJ.metro SET cur_station ='301' WHERE line = '3Up'";
-		stmt.executeUpdate(sql);
-		
-		
-
-		//metro.makeTrain();
-		//metro.runrun();
-		
-		
+		Statement stmt = con.createStatement();	
+		metro.makeTrain();
+		metro.runrun(stmt);
 	}
 	//열차 운행 메서드.
-	public void runrun() {
+	public void runrun(Statement stmt) {
 		Timer timer = new Timer();//타이머 변수. 
 		TimerTask task = new TimerTask() {//주기 반복 실행.
 
 			@Override
 			public void run() {
 				for(int i = 0; i < train.length; i++) {
-					train[i].run();
+					train[i].run(stmt);
 				}
 				System.out.println("---------------------------------------");
 			}	
 		};
-		timer.schedule(task, 0, 3000);	
+		timer.schedule(task, 0, 1000);	
 	}
 	//열차 생성 메서드.
 	public void makeTrain() {

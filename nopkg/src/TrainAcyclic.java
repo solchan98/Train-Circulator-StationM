@@ -50,7 +50,7 @@ public class TrainAcyclic extends Train{
 			}
 		}
 		else
-			rem_next_time -= 3;//3초씩 감소.
+			rem_next_time -= 1;//1초씩 감소.
 	}
 	//경로 설정 메서드.
 	@Override

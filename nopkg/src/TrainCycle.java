@@ -30,7 +30,7 @@ public class TrainCycle extends Train {
 			rem_next_time = route[cur_station].get(0).getTime();
 		}
 		else
-			rem_next_time -= 3;//3초씩 감소.
+			rem_next_time -= 1;//3초씩 감소.
 	}
 	/*남은 시간 구하는 메서드.
 	@Override
