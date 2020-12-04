@@ -63,7 +63,7 @@ public class TrainAcyclic extends Train{
 		String temp_s;
 		InputStream	inputStream = null;
 		if(line == 2 || line == 3 || line == 4 || line == 5 || line == 7 || line == 8 || line == 9)
-			inputStream = new FileInputStream("/Users/sol/google/2-2학기/팀프로젝트1/metro/metro/indexL/line" + line + ".txt");
+			inputStream = new FileInputStream("/Users/sol/google/2-2학기/팀프로젝트1/TrainCirculator/metrodata/indexL/line" + line + ".txt");
 		else
 			System.out.println("잘못된 파일이 연결되었습니다.");
 		InputStreamReader inputreader = new InputStreamReader(inputStream);
@@ -79,7 +79,7 @@ public class TrainAcyclic extends Train{
         }
         // 데이터 입력 단계.
         if(line == 2 || line == 3 || line == 4 || line == 5 || line == 7 || line == 8 || line == 9)
-			inputStream = new FileInputStream("/Users/sol/google/2-2학기/팀프로젝트1/metro/metro/indexL/line" + line + ".txt");
+			inputStream = new FileInputStream("/Users/sol/google/2-2학기/팀프로젝트1/TrainCirculator/metrodata/indexL/line" + line + ".txt");
 		else
 			System.out.println("잘못된 파일이 연결되었습니다.");
         inputreader = new InputStreamReader(inputStream);

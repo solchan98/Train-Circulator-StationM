@@ -20,6 +20,7 @@ public class driver {
 	}
 	//열차 운행 메서드.
 	public void runrun(Statement stmt) {
+		System.out.println("열차 시뮬레이터가 정상적으로 작동합니다.");
 		Timer timer = new Timer();//타이머 변수. 
 		TimerTask task = new TimerTask() {//주기 반복 실행.
 
@@ -28,7 +29,7 @@ public class driver {
 				for(int i = 0; i < train.length; i++) {
 					train[i].run(stmt);
 				}
-				System.out.println("---------------------------------------");
+				System.out.print(". ");
 			}	
 		};
 		timer.schedule(task, 0, 1000);	

@@ -96,14 +96,14 @@ public abstract class Train {
 	public void buildName() throws IOException{
 		String temp_s;
 		InputStream	inputStream = null;
-		inputStream = new FileInputStream("/Users/sol/google/2-2학기/팀프로젝트1/metro/metro/indexN/lineN" + line + ".txt");
+		inputStream = new FileInputStream("/Users/sol/google/2-2학기/팀프로젝트1/TrainCirculator/metrodata/indexN/lineN" + line + ".txt");
 		InputStreamReader inputreader = new InputStreamReader(inputStream);
         BufferedReader stationData = new BufferedReader(inputreader);
 		while ((temp_s = stationData.readLine()) != null) // Subway.txt의 라인 수 만큼 temp_n증가.
 			station_cnt++;
         station = new ArrayList<>(station_cnt + 1);
         // 데이터 입력 단계.
-		inputStream = new FileInputStream("/Users/sol/google/2-2학기/팀프로젝트1/metro/metro/indexN/lineN" + line + ".txt");
+		inputStream = new FileInputStream("/Users/sol/google/2-2학기/팀프로젝트1/TrainCirculator/metrodata/indexN/lineN" + line + ".txt");
         inputreader = new InputStreamReader(inputStream);
         stationData = new BufferedReader(inputreader);
 		while ((temp_s = stationData.readLine()) != null) {

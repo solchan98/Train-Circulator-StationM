@@ -10,7 +10,7 @@ public class DBManager {
 		String url = "jdbc:mysql://www.solac.shop:3306";			
 		Class.forName("com.mysql.jdbc.Driver");
 		System.out.println("DB 연결중 ...");
-		Connection con = DriverManager.getConnection(url, "qkrthfcks", "psc487900!");
+		Connection con = DriverManager.getConnection(url, "공백", "공백");
 		System.out.println("DB 연결완료^^");
 		return con;
 	}
